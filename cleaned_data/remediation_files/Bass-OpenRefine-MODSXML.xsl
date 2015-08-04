@@ -114,7 +114,7 @@
     <!-- Location -->  
         <location>
             <physicalLocation><xsl:value-of select="repository"/></physicalLocation>
-            <xsl:if test="object_in_context">
+            <xsl:if test="object_context">
                 <url access="object in context" usage="primary"><xsl:value-of select="object_in_context"/></url>
             </xsl:if>
             <xsl:if test="file_thumbnail_URL">
@@ -146,7 +146,7 @@
                 <xsl:if test="project_title_initial_article">
                     <nonSort><xsl:value-of select="project_title_initial_article"/></nonSort>
                 </xsl:if>
-                <title><xsl:value-of select="project_title"/></title>
+                <title>The Dr. William M. Bass III Collection - The Bass Field Notes</title>
             </titleInfo>
             <xsl:if test="project_url">
                 <location>
@@ -180,18 +180,1492 @@
             </relatedItem>
         </xsl:for-each>
         <!-- BASS HAS SOME ANNOYING RELATED PARTS / DIGITIZATION PRACTICES IN PLAY -->
-        <xsl:for-each select="relatedItem_constituent_title">
+        <xsl:if test="relatedItem_constituent_title|relatedItem_constituent_name">
             <relatedItem type="constituent">
-                <titleInfo>
-                    <title><xsl:value-of select="."/></title>
-                </titleInfo>
-                <xsl:if test="relatedItem_constituent_name">
-                    <xsl:for-each select="tokenize(relatedItem_constituent_name, ' || ')">
-                        <xsl:apply-templates select="name"/>
-                    </xsl:for-each>
-                </xsl:if>
+                <xsl:for-each select="relatedItem_constituent_title">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
             </relatedItem>
-        </xsl:for-each>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_1|relatedItem_constituent_name_1">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_1">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_1">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_2|relatedItem_constituent_name_2">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_2">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_2">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_3|relatedItem_constituent_name_3">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_3">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_3">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_4|relatedItem_constituent_name_4">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_4">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_4">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_5|relatedItem_constituent_name_5">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_5">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_5">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_6|relatedItem_constituent_name_6">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_6">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_6">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_7|relatedItem_constituent_name_7">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title-7">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_7">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_8|relatedItem_constituent_name_8">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_8">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_8">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_9|relatedItem_constituent_name_9">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_9">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_9">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_10|relatedItem_constituent_name_10">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_10">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_10">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_11|relatedItem_constituent_name_11">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_11">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_11">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_12|relatedItem_constituent_name_12">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_12">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_12">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_13|relatedItem_constituent_name_13">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_13">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_13">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_14|relatedItem_constituent_name_14">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_14">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_14">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_15|relatedItem_constituent_name_15">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_15">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_15">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_16|relatedItem_constituent_name_16">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_16">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_16">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_17|relatedItem_constituent_name_17">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_17">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_17">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_18|relatedItem_constituent_name_18">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_18">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_18">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_19|relatedItem_constituent_name_19">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_19">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_19">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_20|relatedItem_constituent_name_20">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_20">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_20">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_21|relatedItem_constituent_name_21">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_21">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_21">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_22|relatedItem_constituent_name_22">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_22">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_22">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_23|relatedItem_constituent_name_23">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_23">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_23">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_24|relatedItem_constituent_name_24">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_24">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_24">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_25|relatedItem_constituent_name_25">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_25">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_25">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+        <xsl:if test="relatedItem_constituent_title_26|relatedItem_constituent_name_26">
+            <relatedItem type="constituent">
+                <xsl:for-each select="relatedItem_constituent_title_26">
+                    <titleInfo>
+                        <title><xsl:value-of select="."/></title>
+                    </titleInfo>
+                </xsl:for-each>
+                <xsl:for-each select="relatedItem_constituent_name_26">
+                    <name>
+                        <xsl:if test="contains(., ' \|\| ')">
+                            <xsl:for-each select="tokenize(., ' \|\| ')">
+                                <xsl:if test="contains(., 'authorities/names')">
+                                    <xsl:attribute name="authority">naf</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., 'authorities/subjects')">
+                                    <xsl:attribute name="authority">lcsh</xsl:attribute>
+                                </xsl:if>
+                                <xsl:if test="contains(., '| URI: ')">
+                                    <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                                </xsl:if>
+                                <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                                <xsl:if test="contains(., '| Role: ')">
+                                    <role>
+                                        <roleTerm type="text" authority="marcrelator">
+                                            <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                            <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                        </roleTerm>
+                                    </role>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:if>
+                        <xsl:if test="not(contains(., ' \|\| '))">
+                            <xsl:if test="contains(., 'authorities/names')">
+                                <xsl:attribute name="authority">naf</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., 'authorities/subjects')">
+                                <xsl:attribute name="authority">lcsh</xsl:attribute>
+                            </xsl:if>
+                            <xsl:if test="contains(., '| URI: ')">
+                                <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., '| URI: '))+8, (string-length(substring-before(., '| Role:')))-(string-length(substring-before(., '| URI: '))+8))"/></xsl:attribute>
+                            </xsl:if>
+                            <namePart><xsl:value-of select="substring-before(., ' | ')"/></namePart>
+                            <xsl:if test="contains(., '| Role: ')">
+                                <role>
+                                    <roleTerm type="text" authority="marcrelator">
+                                        <xsl:attribute name="valueURI"><xsl:value-of select="substring(., string-length(substring-before(., 'Role URI:'))+11, (string-length(substring-before(., 'Role URI:'))+12))"/></xsl:attribute>
+                                        <xsl:value-of select="substring(., string-length(substring-before(., 'Role: '))+7, string-length(substring-before(., '| Role URI:'))-(string-length(substring-before(., 'Role: '))+7))"/>                        
+                                    </roleTerm>
+                                </role>
+                            </xsl:if>
+                        </xsl:if>
+                    </name>
+                </xsl:for-each>
+            </relatedItem>
+        </xsl:if>
+  
         <!-- Part of a Series/Journal/Periodical for which we have information -->
         <xsl:for-each select="series_title">
             <relatedItem type="series">

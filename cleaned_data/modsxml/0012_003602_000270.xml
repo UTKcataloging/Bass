@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd"
+      version="3.5">
+   <identifier type="local">0012_003602_000270</identifier>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n83189337">
+      <namePart>Bass, William M., 1928-</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n84131963">
+      <namePart>Missouri River Basin Project (U.S.)</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n79022809">
+      <namePart>United States. National Park Service</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n50057228">
+      <namePart>River Basin Surveys</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n80032716">
+      <namePart>Nebraska State Historical Society</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <titleInfo>
+      <title>Bass Field Notes, MBP:  39SL4, 1961 (summer)</title>
+   </titleInfo>
+   <typeOfResource>text</typeOfResource>
+   <originInfo>
+      <dateCreated>1961 (summer)</dateCreated>
+      <dateCreated encoding="edtf" keyDate="yes">1961-22</dateCreated>
+   </originInfo>
+   <physicalDescription>
+      <form authority="aat" valueURI="http://vocab.getty.edu/aat/300028569">manuscripts (document genre)</form>
+   </physicalDescription>
+   <abstract>M.B.P. Weekly Progress Report, Summer 1961</abstract>
+   <location>
+      <physicalLocation>University of Tennessee, Knoxville. Special Collections</physicalLocation>
+   </location>
+   <subject>
+      <topic>14CY30</topic>
+   </subject>
+   <subject>
+      <topic>39LM232</topic>
+   </subject>
+   <subject>
+      <topic>39CO19</topic>
+   </subject>
+   <subject>
+      <topic>5DA801</topic>
+   </subject>
+   <subject>
+      <topic>25FT31</topic>
+   </subject>
+   <subject>
+      <topic>39BF225</topic>
+   </subject>
+   <subject>
+      <topic>39BF225</topic>
+   </subject>
+   <subject>
+      <topic>5DA201</topic>
+   </subject>
+   <subject authority="lcsh"
+            valueURI="http://id.loc.gov/authorities/subjects/sh2009125236">
+      <topic>Excavations (Archaeology)--United States</topic>
+   </subject>
+   <subject authority="lcsh"
+            valueURI="http://id.loc.gov/authorities/subjects/sh2009007848">
+      <topic>Indians of North America--United States</topic>
+   </subject>
+   <subject>
+      <geographic authority="lcsh" valueURI="">Agate Basin Site (Wyo.)</geographic>
+   </subject>
+   <subject>
+      <geographic>Niobara County (Wyo.)</geographic>
+   </subject>
+   <subject>
+      <geographic>Woods Site (Kan.)</geographic>
+   </subject>
+   <subject>
+      <geographic>Pretty Head Site (S.D.)</geographic>
+   </subject>
+   <subject>
+      <geographic>Potts Village Site (S.D.)</geographic>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n81119166">Corson County (S.D.)</geographic>
+      <cartographics>
+         <coordinates>45.7086, -101.19687</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="lcsh"
+                  valueURI="http://id.loc.gov/authorities/subjects/sh89006230">Hugh Butler Lake (Neb.)</geographic>
+      <cartographics>
+         <coordinates>40.36681, -100.69267</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic>Sully Site (S.D.)</geographic>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n81110752">Sully County (S.D.)</geographic>
+      <cartographics>
+         <coordinates>44.71558, -100.1322</coordinates>
+      </cartographics>
+   </subject>
+   <relatedItem type="host" displayLabel="Project">
+      <titleInfo>
+         <title>The Dr. William M. Bass III Collection - The Bass Field Notes</title>
+      </titleInfo>
+   </relatedItem>
+   <relatedItem type="host" displayLabel="Collection">
+      <titleInfo>
+         <title>Dr. William M. Bass III Collection</title>
+      </titleInfo>
+      <identifier type="local">MS.3689</identifier>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>M.B.P. Weekly Progress Report, Summer 1961</title>
+      </titleInfo>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Missouri Basin Project Weekly Reports, 1961</title>
+      </titleInfo>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Archeological progress report no.6 Field Season 1961</title>
+      </titleInfo>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Missouri Basin Weekly Report no.1-4, May 25-June 17, 1961 (Multiple copies of each report)</title>
+      </titleInfo>
+      <name>
+         <namePart>Neuman, Robert W.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Missouri Basin Weekly Report no.3-4, June 13-24, 1961</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n83208195">
+         <namePart>Caldwell, Warren W. (Warren Wendell)</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Missouri Basin Weekly Report no.4, June 8-16, 1961</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n83189337">
+         <namePart>Bass, William M., 1928-</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n2007018006">
+         <namePart>Metcalf, George, 1900-1975</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Missouri Basin Weekly Report, Party no.4, June 19-July 15, August 11-31, 1961 (Two copies of some reports)</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n84053297">
+         <namePart>Stephenson, Robert L.(Robert Lloyd), 1919-</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Missouri Basin Weekly Report Agate Basin Party, June 17-August 3, 1961</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n83189337">
+         <namePart>Bass, William M., 1928-</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Missouri Basin Weekly Report Field Party no.2, June 26-30, July 30-September 9,1961</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n82020447">
+         <namePart>Neuman, Robert W.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n83208195">
+         <namePart>Caldwell, Warren W. (Warren Wendell)</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Missouri Basin Weekly Report SI - NSF Field Party, June 24-August 12, 1961</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n2007018006">
+         <namePart>Metcalf, George, 1900-1975</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Missouri Basin Weekly Report KSHS Field Party, June 19, 1961</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n84153503">
+         <namePart>Witty, Thomas A.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Missouri Basin Weekly Report Field Party no.2, July 1-28, 1961</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n88127082">
+         <namePart>Buckles, William G.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Missouri Basin Weekly Report Nebraska State Historical Society Field Party, Red Willow Reservoir, July 10, 1961</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n78041757">
+         <namePart>Grange, Roger T.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Missouri Basin Weekly Report Field Party no.4, July 15-28, 1961</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/no2012062258">
+         <namePart>Madison, Lee G.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Missouri Basin Weekly Report, Field Party No.5, August 11-18, 1961</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n83189337">
+         <namePart>Bass, William M., 1928-</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Missouri Basin Weekly Report, July 31, 1961</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n87894417">
+         <namePart>Hurt, Wesley R. (Wesley Robert), 1917-1997</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Missouri Basin Weekly Report SI - USNM Party August 11-35, 1961</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n2007018006">
+         <namePart>Metcalf, George, 1900-1975</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <accessCondition type="use and reproduction">The copyright interests in this item remain with the creator. For more information, contact Special Collections at special@utk.edu.</accessCondition>
+   <recordInfo>
+      <recordIdentifier>record_0012_003602_000270</recordIdentifier>
+      <recordContentSource>University of Tennessee, Knoxville. Libraries</recordContentSource>
+      <languageOfCataloging>
+         <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
+      </languageOfCataloging>
+      <recordOrigin>Created and edited in general conformance to MODS Guidelines (Version 3.5).</recordOrigin>
+   </recordInfo>
+</mods>

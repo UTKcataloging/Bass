@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd"
+      version="3.5">
+   <identifier type="local">0012_003602_000274</identifier>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n83189337">
+      <namePart>Bass, William M., 1928-</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n79066272">
+      <namePart>United States National Museum. Department of Anthropology</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n50057228">
+      <namePart>River Basin Surveys</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <titleInfo>
+      <title>Bass Field Notes, 24TL26 (32SN31, 32GG1, 32ME32, 25BF7, 25CU201, 25HW201, 25NC201, 14PO14, 39ST30, 39BF2B), 1956, 1958</title>
+   </titleInfo>
+   <typeOfResource>text</typeOfResource>
+   <originInfo>
+      <dateCreated>1956, 1958</dateCreated>
+      <dateCreated encoding="edtf" keyDate="yes">1956</dateCreated>
+   </originInfo>
+   <physicalDescription>
+      <form authority="aat" valueURI="http://vocab.getty.edu/aat/300028569">manuscripts (document genre)</form>
+   </physicalDescription>
+   <abstract>Several memos from Dr. Bass to Frank H. H. Roberts dealing with skeletal material sent to the Division of Physical Anthropology.</abstract>
+   <location>
+      <physicalLocation>University of Tennessee, Knoxville. Special Collections</physicalLocation>
+   </location>
+   <subject>
+      <topic>24TL26</topic>
+   </subject>
+   <subject>
+      <topic>32SN31</topic>
+   </subject>
+   <subject>
+      <topic>32GG1</topic>
+   </subject>
+   <subject>
+      <topic>32ME32</topic>
+   </subject>
+   <subject>
+      <topic>25BF7</topic>
+   </subject>
+   <subject>
+      <topic>25CU201</topic>
+   </subject>
+   <subject>
+      <topic>25HW201</topic>
+   </subject>
+   <subject>
+      <topic>25NC201</topic>
+   </subject>
+   <subject>
+      <topic>39BF2B</topic>
+   </subject>
+   <subject>
+      <topic>14PO14</topic>
+   </subject>
+   <subject>
+      <topic>39ST30</topic>
+   </subject>
+   <subject>
+      <geographic>Galata Site</geographic>
+   </subject>
+   <subject>
+      <geographic>Cushing Dam Site</geographic>
+   </subject>
+   <subject>
+      <geographic>Tuttle Creek Site</geographic>
+   </subject>
+   <subject>
+      <geographic>Dodd Site</geographic>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n82097431">Toole County (Mont.)</geographic>
+      <cartographics>
+         <coordinates>48.6553, -111.6957</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n81140588">Stutsman County (N.D.)</geographic>
+      <cartographics>
+         <coordinates>46.97925, -98.95883</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n82104482">Griggs County (N.D.)</geographic>
+      <cartographics>
+         <coordinates>47.45729, -98.23704</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n81140581">Mercer County (N.D.)</geographic>
+      <cartographics>
+         <coordinates>47.30922, -101.83153</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n81018559">Buffalo County (Neb.)</geographic>
+      <cartographics>
+         <coordinates>40.85515, -99.07497</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n82128014">Custer County (Neb.)</geographic>
+      <cartographics>
+         <coordinates>41.39426, -99.72614</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n79060778">Howard County (Neb.)</geographic>
+      <cartographics>
+         <coordinates>41.22004, -98.51709</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n82096170">Nance County (Neb.)</geographic>
+      <cartographics>
+         <coordinates>41.3973, -97.99225</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n82020671">Pottawatomie County (Kan.)</geographic>
+      <cartographics>
+         <coordinates>39.37901, -96.34244</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n84180333">Stanley County (S.D.)</geographic>
+      <cartographics>
+         <coordinates>44.41232, -100.73594</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n81117700">Buffalo County (S.D.)</geographic>
+      <cartographics>
+         <coordinates>44.07635, -99.20496</coordinates>
+      </cartographics>
+   </subject>
+   <relatedItem type="host" displayLabel="Project">
+      <titleInfo>
+         <title>The Dr. William M. Bass III Collection - The Bass Field Notes</title>
+      </titleInfo>
+   </relatedItem>
+   <relatedItem type="host" displayLabel="Collection">
+      <titleInfo>
+         <title>Dr. William M. Bass III Collection</title>
+      </titleInfo>
+      <identifier type="local">MS.3689</identifier>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Location of material sent to the Division of Physical Anthropology by the River Basin Surveys</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n83136078">
+         <namePart>Roberts, Frank H. H. (Frank Harold Hanna), 1897-1966</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/rcp">Addressee</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Preliminary report on an Indian calverium from the Medicine Crow Site, 39BF28, Buffalo County South Dakota</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n83189337">
+         <namePart>Bass, William M., 1928-</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <accessCondition type="use and reproduction">The copyright interests in this item remain with the creator. For more information, contact Special Collections at special@utk.edu.</accessCondition>
+   <recordInfo>
+      <recordIdentifier>record_0012_003602_000274</recordIdentifier>
+      <recordContentSource>University of Tennessee, Knoxville. Libraries</recordContentSource>
+      <languageOfCataloging>
+         <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
+      </languageOfCataloging>
+      <recordOrigin>Created and edited in general conformance to MODS Guidelines (Version 3.5).</recordOrigin>
+   </recordInfo>
+</mods>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd"
+      version="3.5">
+   <identifier type="local">0012_003602_000204</identifier>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n83189337">
+      <namePart>Bass, William M., 1928-</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n80020543">
+      <namePart>Louisiana State University (Baton Rouge, La.)</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/no90006392">
+      <namePart>University of Kansas. Department of Anthropology</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n80120510">
+      <namePart>University of Southwestern Louisiana</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <titleInfo>
+      <title>Bass Field Notes, 16IB3, 1970-1971</title>
+   </titleInfo>
+   <typeOfResource>text</typeOfResource>
+   <originInfo>
+      <dateCreated>1970-1971</dateCreated>
+      <dateCreated encoding="edtf" keyDate="yes">1970</dateCreated>
+   </originInfo>
+   <physicalDescription>
+      <form authority="aat" valueURI="http://vocab.getty.edu/aat/300028569">manuscripts (document genre)</form>
+   </physicalDescription>
+   <abstract>Letter, abstract of work, burial forms for Morton Shell Mound (16IB3) site</abstract>
+   <location>
+      <physicalLocation>University of Tennessee, Knoxville. Special Collections</physicalLocation>
+   </location>
+   <subject>
+      <topic>16IB3</topic>
+   </subject>
+   <subject authority="lcsh"
+            valueURI="http://id.loc.gov/authorities/subjects/sh2009125236">
+      <topic>Excavations (Archaeology)--United States</topic>
+   </subject>
+   <subject authority="lcsh"
+            valueURI="http://id.loc.gov/authorities/subjects/sh2009007848">
+      <topic>Indians of North America--United States</topic>
+   </subject>
+   <subject>
+      <geographic>Morton Shell Mound (La.)</geographic>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n80010513">Iberia Parish (La.)</geographic>
+      <cartographics>
+         <coordinates>29.51353, -91.83964</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic>Weeks Island (La.)</geographic>
+      <cartographics>
+         <coordinates>29.81104, -91.80456</coordinates>
+      </cartographics>
+   </subject>
+   <relatedItem type="host" displayLabel="Project">
+      <titleInfo>
+         <title>The Dr. William M. Bass III Collection - The Bass Field Notes</title>
+      </titleInfo>
+   </relatedItem>
+   <relatedItem type="host" displayLabel="Collection">
+      <titleInfo>
+         <title>Dr. William M. Bass III Collection</title>
+      </titleInfo>
+      <identifier type="local">MS.3689</identifier>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Review of the anthropological investigations into Morton Shell Mound, Weeks Island, Louisiana during the 1970 expedition</title>
+      </titleInfo>
+      <name authority="naf" valueURI="">
+         <namePart>Meditz, David A.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre || Gi">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Archaeological investigations at the Morton Shell Mound, Weeks Island, Iberia Parish, Louisiana -- Abstract</title>
+      </titleInfo>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>University of Kansas Laboratory of Physical Anthropology Burial record, Site No. 16IB3</title>
+      </titleInfo>
+   </relatedItem>
+   <accessCondition type="use and reproduction">The copyright interests in this item remain with the creator. For more information, contact Special Collections at special@utk.edu.</accessCondition>
+   <recordInfo>
+      <recordIdentifier>record_0012_003602_000204</recordIdentifier>
+      <recordContentSource>University of Tennessee, Knoxville. Libraries</recordContentSource>
+      <languageOfCataloging>
+         <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
+      </languageOfCataloging>
+      <recordOrigin>Created and edited in general conformance to MODS Guidelines (Version 3.5).</recordOrigin>
+   </recordInfo>
+</mods>

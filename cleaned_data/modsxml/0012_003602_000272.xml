@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd"
+      version="3.5">
+   <identifier type="local">0012_003602_000272</identifier>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n83189337">
+      <namePart>Bass, William M., 1928-</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n50057228">
+      <namePart>River Basin Surveys</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n84131963">
+      <namePart>Missouri River Basin Project (U.S.)</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n50069109">
+      <namePart>W.H. Over Museum</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n80032716">
+      <namePart>Nebraska State Historical Society</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/no90006392">
+      <namePart>University of Kansas. Department of Anthropology</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <titleInfo>
+      <title>Bass Field Notes, MBP:  39SL4, 1963 (summer)</title>
+   </titleInfo>
+   <typeOfResource>text</typeOfResource>
+   <originInfo>
+      <dateCreated>1963 (summer)</dateCreated>
+      <dateCreated encoding="edtf" keyDate="yes">1963-22</dateCreated>
+   </originInfo>
+   <physicalDescription>
+      <form authority="aat" valueURI="http://vocab.getty.edu/aat/300028569">manuscripts (document genre)</form>
+   </physicalDescription>
+   <abstract>Weekly reports from the 1963 Missouri Basin Project</abstract>
+   <location>
+      <physicalLocation>University of Tennessee, Knoxville. Special Collections</physicalLocation>
+   </location>
+   <subject>
+      <topic>39SL4</topic>
+   </subject>
+   <subject>
+      <topic>24CB221</topic>
+   </subject>
+   <subject>
+      <topic>24CB222</topic>
+   </subject>
+   <subject>
+      <topic>39ST9</topic>
+   </subject>
+   <subject>
+      <topic>39HU213</topic>
+   </subject>
+   <subject>
+      <topic>13ML219</topic>
+   </subject>
+   <subject authority="lcsh"
+            valueURI="http://id.loc.gov/authorities/subjects/sh2009125236">
+      <topic>Excavations (Archaeology)--United States</topic>
+   </subject>
+   <subject authority="lcsh"
+            valueURI="http://id.loc.gov/authorities/subjects/sh2009007848">
+      <topic>Indians of North America--United States</topic>
+   </subject>
+   <subject>
+      <geographic>Sully Site (S.D.)</geographic>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n81110752">Sully County (S.D.)</geographic>
+      <cartographics>
+         <coordinates>44.71558, -100.1322</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n81140202">Fort Scott (Kan.)</geographic>
+      <cartographics>
+         <coordinates>37.83976, -94.7083</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic>Pony Creek Watershed (Iowa)</geographic>
+   </subject>
+   <subject>
+      <geographic authority="lcsh"
+                  valueURI="http://id.loc.gov/authorities/subjects/sh2001011710">Pony Creek (Iowa)</geographic>
+      <cartographics>
+         <coordinates>40.98583, -95.8164</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="lcsh"
+                  valueURI="http://id.loc.gov/authorities/subjects/sh2011003033">Bighorn Lake (Mont. and Wyo.)</geographic>
+      <cartographics>
+         <coordinates>45.21609, -108.11169</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic>Upper Yellowtail Reservoir Site (Mont, and Wyo.)</geographic>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n80049895">Dewey County (S.D.)</geographic>
+      <cartographics>
+         <coordinates>45.15662, -100.87186</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="lcsh"
+                  valueURI="http://id.loc.gov/authorities/subjects/sh2002007926">Milford Lake (Kan.)</geographic>
+      <cartographics>
+         <coordinates>39.08546, -96.95376</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="lcsh"
+                  valueURI="http://id.loc.gov/authorities/subjects/sh2004003640">Gavins Point Dam (Neb. and S.D.)</geographic>
+      <cartographics>
+         <coordinates>42.86194, -97.48534</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="lcsh"
+                  valueURI="http://id.loc.gov/authorities/subjects/sh87001964">Sharpe, Lake (S.D.)</geographic>
+      <cartographics>
+         <coordinates>44.14797, -99.92882</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic>Grover Hand Site (S.D.)</geographic>
+   </subject>
+   <subject>
+      <geographic>Red Cloud Agency Site</geographic>
+      <cartographics>
+         <coordinates>42.66969, -103.43548</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/n80014565">Hughes County (S.D.)</geographic>
+      <cartographics>
+         <coordinates>44.38903, -99.99605</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="naf" valueURI="">Garrison Diversion Conservancy District (N.D.)</geographic>
+   </subject>
+   <relatedItem type="host" displayLabel="Project">
+      <titleInfo>
+         <title>The Dr. William M. Bass III Collection - The Bass Field Notes</title>
+      </titleInfo>
+   </relatedItem>
+   <relatedItem type="host" displayLabel="Collection">
+      <titleInfo>
+         <title>Dr. William M. Bass III Collection</title>
+      </titleInfo>
+      <identifier type="local">MS.3689</identifier>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>M.B.P. weekly progress reports, Summer 1963</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n83189337">
+         <namePart>Bass, William M., 1928-</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre || Stephenson, Robert L. (Robert Lloyd), 1919- | URI: http://id.l">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Archeological progress report no.8, Field season of 1963, December, 1963</title>
+      </titleInfo>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Archaeological progress report no.9, Field Season of 1964, November, 1964</title>
+      </titleInfo>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1963 Missouri Basin Project weekly report, Party no.1 - Kansas and Nebraska surveys, Report no.1-3, May 10-24, 1963</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/no2004018542">
+         <namePart>Brown, Lionel A.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1963 Missouri Basin Project weekly report Party no.3 - Sully Burial analysis, Report no.1, 3-9, June 7, 22-August 2, 1963</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n83189337">
+         <namePart>Bass, William M., 1928-</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/no2004018542">
+         <namePart>Brown, Lionel A.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1963 Missouri Basin Project weekly report, Party #5 - Upper Yellowtail Reservoir, Report no.1-12, June 14-July 5-August 30, 1963</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/no90027536">
+         <namePart>Husted, Wilfred M.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1963 Missouri Basin Project weekly report Party #10 - Dewey County Party, Report no.1-12, June 14-August 30, 1963</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n82020447">
+         <namePart>Neuman, Robert W.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1963 Missouri Basin Project weekly report Party #12 - Davis Creek Site, Report no.1-12, June 14-August 30, 1963 [Numbering of the reports is off, went by dates]</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n87856030">
+         <namePart>Bowers, Alfred W.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n85031246">
+         <namePart>Muller, Jon</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1963 Missouri Basin Project weekly report, News from Lincoln, Report no.1-5, June 24-August 12, 1963</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n84053297">
+         <namePart>Stephenson, Robert L. (Robert Lloyd), 1919-</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>University of South Dakota, Gavins Point Project no.2, Cooperators Party B, Report no.1-7, June 21-August 2, 1963</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/no2001006452">
+         <namePart>Gant, Robert D.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1963 Missouri Basin Project weekly report, Party no.6 - Historic sites (Big Bend &amp; Oahe Res. Areas), Report no.1-10, June 22-August 24, 1963</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n81119648">
+         <namePart>Smith, G. Hubert (George Hubert), 1908-1972</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1963 Missouri Basin Project weekly report, Party no.7 - Pierre South Dakota, Report no.1-10, June 21-August 24, 1963 [numbering off, going by date]</title>
+      </titleInfo>
+      <name>
+         <namePart>Jensen, Richard E.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1963 Missouri Basin Project Weekly Report, Parties no. 8 and 9 - La Roche and Chapelle Creek, Report no.1-11, June 21-September 3, 1963</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/no2004118058">
+         <namePart>Hoffman, J. J. (John Jacob), 1931-</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1963 Missouri Basin Project weekly report, Party no.11 - Moreau Party, Report no.2-11, June 21-August 30, 1963</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/no2004118055">
+         <namePart>Mallory, Oscar L.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>University of Kansas Milford Reservoir Archeological Party, Cooperators Party A, Report no.3, June 28, 1963</title>
+      </titleInfo>
+      <name>
+         <namePart>Schock, Jack</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Nebraska State Historical Society - National Science Foundation Logan Creek Project - Cooperators Party C, Report no.1, June 28, 1963</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n88243079">
+         <namePart>Kivett, Marvin F.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1963 Missouri Basin Project Weekly report, Party no. 9 - Chapelle Creek, Report no.3-10, July 5-August 23, 1963</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n78078895">
+         <namePart>Folan, William J.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1963 Missouri Basin Project weekly report, Party no. 4 - Garrison Diversion, Report no.1-6, July 26-August 30, 1963</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n50038965">
+         <namePart>Johnson, Elden</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <accessCondition type="use and reproduction">The copyright interests in this item remain with the creator. For more information, contact Special Collections at special@utk.edu.</accessCondition>
+   <recordInfo>
+      <recordIdentifier>record_0012_003602_000272</recordIdentifier>
+      <recordContentSource>University of Tennessee, Knoxville. Libraries</recordContentSource>
+      <languageOfCataloging>
+         <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
+      </languageOfCataloging>
+      <recordOrigin>Created and edited in general conformance to MODS Guidelines (Version 3.5).</recordOrigin>
+   </recordInfo>
+</mods>

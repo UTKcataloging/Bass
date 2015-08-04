@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd"
+      version="3.5">
+   <identifier type="local">0012_003602_000271</identifier>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n83189337">
+      <namePart>Bass, William M., 1928-</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n84131963">
+      <namePart>Missouri River Basin Project (U.S.)</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/n50057228">
+      <namePart>River Basin Surveys</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <name authority="naf"
+         valueURI="http://id.loc.gov/authorities/names/no90006392">
+      <namePart>University of Kansas. Department of Anthropology</namePart>
+      <role>
+         <roleTerm type="text"
+                   authority="marcrelator"
+                   valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+      </role>
+   </name>
+   <titleInfo>
+      <title>Bass Field Notes, MBP:  39SL4, 1962 (summer)</title>
+   </titleInfo>
+   <typeOfResource>text</typeOfResource>
+   <originInfo>
+      <dateCreated>1962 (summer)</dateCreated>
+      <dateCreated encoding="edtf" keyDate="yes">1962-22</dateCreated>
+   </originInfo>
+   <physicalDescription>
+      <form authority="aat" valueURI="http://vocab.getty.edu/aat/300028569">manuscripts (document genre)</form>
+   </physicalDescription>
+   <abstract>MBP Weekly progress reports Summer, 1962</abstract>
+   <location>
+      <physicalLocation>University of Tennessee, Knoxville. Special Collections</physicalLocation>
+   </location>
+   <subject>
+      <topic>39PO1</topic>
+   </subject>
+   <subject>
+      <topic>39PO207</topic>
+   </subject>
+   <subject>
+      <topic>39HU48</topic>
+   </subject>
+   <subject>
+      <topic>39ST55</topic>
+   </subject>
+   <subject>
+      <topic>39DV0233</topic>
+   </subject>
+   <subject>
+      <topic>39LM209</topic>
+   </subject>
+   <subject>
+      <topic>39ST202</topic>
+   </subject>
+   <subject>
+      <topic>39CO34</topic>
+   </subject>
+   <subject>
+      <topic>39CO14</topic>
+   </subject>
+   <subject>
+      <topic>48BH206</topic>
+   </subject>
+   <subject>
+      <topic>14MH2</topic>
+   </subject>
+   <subject>
+      <topic>14OS314</topic>
+   </subject>
+   <subject>
+      <topic>5DO201</topic>
+   </subject>
+   <subject>
+      <topic>39DW234</topic>
+   </subject>
+   <subject authority="lcsh"
+            valueURI="http://id.loc.gov/authorities/subjects/sh2009125236">
+      <topic>Excavations (Archaeology)--United States</topic>
+   </subject>
+   <subject authority="lcsh"
+            valueURI="http://id.loc.gov/authorities/subjects/sh2009007848">
+      <topic>Indians of North America--United States</topic>
+   </subject>
+   <subject>
+      <geographic>Steamboat Creek Site</geographic>
+   </subject>
+   <subject>
+      <geographic>Second Hand Site</geographic>
+   </subject>
+   <subject>
+      <geographic>Beached Bone Site</geographic>
+   </subject>
+   <subject>
+      <geographic>Antelope Creek Site</geographic>
+   </subject>
+   <subject>
+      <geographic>Salt-Wahoo Watershed (Neb.)</geographic>
+   </subject>
+   <subject>
+      <geographic>Pony Creek Watershed Site (Iowa)</geographic>
+   </subject>
+   <subject>
+      <geographic>Sully Site (S.D.)</geographic>
+   </subject>
+   <subject>
+      <geographic>Arcadia Dam (Okla.)</geographic>
+      <cartographics>
+         <coordinates>44.13491, -111.58913</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic>Langdeau Site</geographic>
+   </subject>
+   <subject>
+      <geographic>Medicine Creek Site (Neb.)</geographic>
+   </subject>
+   <subject>
+      <geographic authority="lcsh" valueURI="">Medicine Creek Valley (Neb.)</geographic>
+   </subject>
+   <subject>
+      <geographic>LeCompte Creek Site</geographic>
+   </subject>
+   <subject>
+      <geographic>Fort George Site</geographic>
+      <cartographics>
+         <coordinates>31.36495, -81.41454</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic>Oak Creek Site</geographic>
+      <cartographics>
+         <coordinates>35.15672, -98.89035</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="lcsh"
+                  valueURI="http://id.loc.gov/authorities/subjects/sh2011003033">Bighorn Lake (Mont. and Wyo.)</geographic>
+      <cartographics>
+         <coordinates>45.21609, -108.11169</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="lcsh"
+                  valueURI="http://id.loc.gov/authorities/subjects/sh2003011264">Missouri Breaks (Mont.)</geographic>
+      <cartographics>
+         <coordinates>45.81715, -110.89661</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic authority="naf"
+                  valueURI="http://id.loc.gov/authorities/names/nr2003034887">Blue Rapids (Kan.)</geographic>
+      <cartographics>
+         <coordinates>39.68194, -96.65974</coordinates>
+      </cartographics>
+   </subject>
+   <subject>
+      <geographic>Harsett Site (Kan.)</geographic>
+   </subject>
+   <subject>
+      <geographic authority="lcsh" valueURI="">Molstad Village Site (S.D.)</geographic>
+   </subject>
+   <relatedItem type="host" displayLabel="Project">
+      <titleInfo>
+         <title>The Dr. William M. Bass III Collection - The Bass Field Notes</title>
+      </titleInfo>
+   </relatedItem>
+   <relatedItem type="host" displayLabel="Collection">
+      <titleInfo>
+         <title>Dr. William M. Bass III Collection</title>
+      </titleInfo>
+      <identifier type="local">MS.3689</identifier>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>MBP Weekly progress reports Summer, 1962</title>
+      </titleInfo>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Report of Party no. 10 - Sully Burial Party 1962 field season</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n83189337">
+         <namePart>Bass, William M., 1928-</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Archeological progress report no.7, Field season of 1962 October, 1962</title>
+      </titleInfo>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1962 Missouri Basin Project weekly report, Party no.1 - Salt-Wahoo Watershed Report no.1 ; April 5-6, 1962</title>
+      </titleInfo>
+      <name>
+         <namePart>Neuman, Robert W.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1962 Missouri Basin Project weekly report ; Party no.2 - Pony Creek Site, Report no.1-4 ; May 1-25, 1962 (Two copies of report no.4)</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/no2004018542">
+         <namePart>Brown, Lionel A.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1962 Missouri Basin Project weekly report; Party no.3, Report no.1 ; May 1-4, 1962</title>
+      </titleInfo>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n81119648">
+         <namePart>Smith, G. Hubert (George Hubert), 1908-1972</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1962 Missouri Basin Project weekly report ; Party no.4 - Arcadia Dam, Report no.1 ; May 19, 1962</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n81119648">
+         <namePart>Smith, G. Hubert (George Hubert), 1908-1972</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1962 Missouri Basin Project weekly report; Parties no.7 &amp; 8, Langdeau &amp; Medicine Creek sites, Report no.1-5, 7; June 9-July 7, 23,1962 (Two copies of Report no.1)</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n83208195">
+         <namePart>Caldwell, Warren W. (Warren Wendell)</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1962 Missouri Basin Project weekly report; Party no.10 - Sully Burial Party, Report no.1, 3-7 ; June 9, 22-July 20, 1962 (Two copies of Report no.1)</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n83189337">
+         <namePart>Bass, William M., 1928-</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n82020447">
+         <namePart>Neuman, Robert W.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1962 Missouri Basin Project weekly report; Party no.7 - Langdeau, Report no.2-5, 7; June 11-July 7, 20, 1962</title>
+      </titleInfo>
+      <name>
+         <namePart>Jensen, Richard E.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1962 Missouri Basin Project weekly report; Party no.8 - Medicine Creek, Report no.2-5, 7 ; June 11-July 7, 20, 1962</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n87825640">
+         <namePart>Carter, Richard T. (Richard Thomas), 1941-</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1962 Missouri Basin Project weekly report; Party no.9 - Fort George, Report no.2-6; June 22-July 21, 1962</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n81119648">
+         <namePart>Smith, G. Hubert (George Hubert), 1908-1972</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1962 Missouri Basin Project weekly report; Party no.11 -- Oak Creek, Report no.1-6, June 24-July 20, 1962</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n87856030">
+         <namePart>Bowers, Alfred W.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1962 Missouri River Basin project weekly report; Party no. 13 - Lower Yellowtail, Report no.2-4, 6; June 22-July 6, 20 1962</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/no2004018542">
+         <namePart>Brown, Lionel A.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1962 Missouri Basin Project weekly report; Party no. 14 - Yellowtail Reservoir, Report no.2-6; June 22-July 20, 1962</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/no90027536">
+         <namePart>Husted, Wilfred M.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1962 Missouri Basin Project weekly report; Party no. 15 - Missouri Breaks, Report no.2-4, 6; June 22-July 6, 21 1962</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/no2004118055">
+         <namePart>Mallory, Oscar L.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1962 Missouri Basin Project weekly report; Party no. 16 - Blue Rapids, Kansas, Report no.1-5; June 22-July 21, 1962</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/no2012053850">
+         <namePart>Miller, Carl F. (Carl Frederick), 1906-1994</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>University of Kansas Field party, Report no.2-6; June 22-July 21, 1962</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/no2006120248">
+         <namePart>Birkby, Walter H.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>University of Kansas Field party, Report no.2-6; June 22-July 21, 1962</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n81133466">
+         <namePart>Smith, Carlyle S. (Carlyle Shreeve), 1915-1993</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Smithsonian Field Party, Report no.1-3, 5; June 12-July 7, 20, 1962</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n81147527">
+         <namePart>Wedel, Waldo R. (Waldo Rudolph), 1908-1996</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1962 Missouri Basin Project weekly report, news from the office, Report no.1-3; July 2-16, 1962</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n84053297">
+         <namePart>Stephenson, Robert L. (Robert Lloyd), 1919-</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Special bulletin</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n84053297">
+         <namePart>Stephenson, Robert L. (Robert Lloyd), 1919-</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>1962 Missouri Basin Project weekly report, Party no.12 - Minneapolis, Report no.1 ; July 20, 1962</title>
+      </titleInfo>
+      <name>
+         <namePart>Helmen, Vernon R.</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <relatedItem type="constituent">
+      <titleInfo>
+         <title>Smithsonian Field Party, Report no.5; July 20, 1962</title>
+      </titleInfo>
+      <name authority="naf"
+            valueURI="http://id.loc.gov/authorities/names/n2007018006">
+         <namePart>Metcalf, George, 1900-1975</namePart>
+         <role>
+            <roleTerm type="text"
+                      authority="marcrelator"
+                      valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+         </role>
+      </name>
+   </relatedItem>
+   <accessCondition type="use and reproduction">The copyright interests in this item remain with the creator. For more information, contact Special Collections at special@utk.edu.</accessCondition>
+   <recordInfo>
+      <recordIdentifier>record_0012_003602_000271</recordIdentifier>
+      <recordContentSource>University of Tennessee, Knoxville. Libraries</recordContentSource>
+      <languageOfCataloging>
+         <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
+      </languageOfCataloging>
+      <recordOrigin>Created and edited in general conformance to MODS Guidelines (Version 3.5).</recordOrigin>
+   </recordInfo>
+</mods>
